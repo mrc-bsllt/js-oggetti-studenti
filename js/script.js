@@ -59,8 +59,70 @@ $(document).ready(
       }
     }
 
+    // PUNTO 3-------------------------------------------------------------
+    // riprendo l'array di prima dei nomi
+    var studenti = [
+      {
+        nome: "Marco",
+        cognome: "Busellato"
+      },
+      {
+        nome: "Simone",
+        cognome: "Romiti"
+      },
+      {
+        nome: "Enrico",
+        cognome: "Rombaldoni"
+      },
+      {
+        nome: "Gianluca",
+        cognome: "Pesce"
+      },
+      {
+        nome: "Marco",
+        cognome: "Calvieri"
+      },
+      {
+        nome: "Alessandro",
+        cognome: "Neri"
+      },
+      {
+        nome: "Riccardo",
+        cognome: "Ferrari"
+      },
 
+    ];
 
+    // creo un oggetto vuoto, dopo andro ad inserire i dati dell'Utente
+    var newUser = {};
+    // chiedo 3 volte un prompt per ricevere i dati
+    var messaggio = "";
+    var userData;
+    for(var i = 0; i < 3; i++) {
+      switch (i) {
+        case 0:
+          messaggio = "Nome";
+          userData = "nome";
+          break;
+        case 1:
+          messaggio = "cognome";
+          userData = "cognome";
+          break;
+         case 2:
+          messaggio = "età";
+          userData = "eta";
+          break;
+      }
+      if(i == 2) {
+        var value = parseInt(prompt("Inserisci il tuo " + messaggio));
+      } else {
+        var value = prompt("Inserisci il tuo " + messaggio);
+      }
+      newUser[userData] = value;
+    }
+
+    studenti.push(newUser);
+    console.log(studenti);
 
   }
 );
